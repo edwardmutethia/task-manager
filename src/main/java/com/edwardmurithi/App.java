@@ -19,10 +19,11 @@ public class App {
             System.out.println("\n----TASK MANAGER----\n");
             System.out.println("1. Add new task.");
             System.out.println("2. View task.");
-            System.out.println("3. Mark task COMPLETE.");
-            System.out.println("4. Search/Find Task.");
-            System.out.println("5. Delete a Task");
-            System.out.println("6. Save & Exit App.");
+            System.out.println("3. Edit task.");
+            System.out.println("4. Mark task COMPLETE.");
+            System.out.println("5. Search/Find Task.");
+            System.out.println("6. Delete a Task");
+            System.out.println("7. Save & Exit App.");
 
             System.out.print("\nSelect an Option: ");
 
@@ -32,7 +33,12 @@ public class App {
                 switch (option) {
                     case 1 -> addTask();
                     case 2 -> viewTask();
-                    case 3 -> {
+                    case 3 -> editTask();
+                    case 4 -> markTaskComplete();
+                    case 5 -> searchTask();
+                    case 6 -> deleteTask();
+                    case 7 -> {
+                        saveTask();
                         System.out.println("Exiting the Application");
                         return;
                     }
@@ -70,7 +76,6 @@ public class App {
             tasks.add(task);
             addedCount++;
         }
-
         if (addedCount > 0) {
             System.out.println(addedCount + " task(s) added successfully.");
         } else {
@@ -78,5 +83,23 @@ public class App {
         }
     }
 
+    public static void editTask() {
 
+    }
+
+    public static void markTaskComplete() {
+
+    }
+
+    public static void searchTask() {
+
+    }
+
+    public  static void deleteTask() {
+
+    }
+
+    public static void saveTask() {
+
+    }
 }
