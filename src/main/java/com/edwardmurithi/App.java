@@ -50,9 +50,23 @@ public class App {
         }
     }
 
+    // utility method
+    public static boolean checkTasksIfEmpty() {
+        boolean tasksEmpty = false;
+        if (tasks.isEmpty()) {
+            tasksEmpty = true;
+        }
+        return tasksEmpty;
+    }
+
     public static void viewTask() {
         for (int i = 0; i < tasks.size(); i++) {
-            System.out.println("[" + (i + 1) + "] " + tasks.get(i));
+            if (checkTasksIfEmpty()) {
+                System.out.println("No available tasks.");
+            } else {
+                System.out.println("[" + (i + 1) + "] " + tasks.get(i));
+            }
+
         }
     }
 
@@ -84,6 +98,24 @@ public class App {
     }
 
     public static void editTask() {
+        System.out.println("\n******** Edit Tasks **********\n");
+        if (checkTasksIfEmpty()) {
+            System.out.println("No available tasks.");
+            return;
+        } else {
+           viewTask();
+        }
+
+        try {
+            System.out.print("Select task to edit: ");
+            int taskNumber = Integer.parseInt(scanner.nextLine());
+            int taskIndex = taskNumber - 1;
+
+            System.out.print("Edit task: ");
+            tasks.set(taskIndex, scanner.nextLine());
+        } catch (Exception e) {
+            System.out.println("An Error Occurred");
+        }
 
     }
 
